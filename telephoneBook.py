@@ -7,7 +7,11 @@ import pickle
 
 
 itemList = []
+<<<<<<< HEAD
 baseUrl = '/Users/mac/Desktop/userList.data'
+=======
+baseUrl = '/Users/tb/Desktop/userList.data'
+>>>>>>> 0d3f60d0189a1a3bcacf67629b0ee4b7afbcebff
 
 def menu():
     print("*******************************")
@@ -22,9 +26,16 @@ def menu():
 def customRead():
     if os.path.exists(baseUrl) == True:
         p = open(baseUrl,'rb')
+<<<<<<< HEAD
         global itemList
         itemList = pickle.load(p)
         #print('read:{0}'.format(itemList))
+=======
+        #if len(p.read())!=0:
+            #p.seek(0)
+        itemList = pickle.load(p)
+        print('read:{0}'.format(itemList))
+>>>>>>> 0d3f60d0189a1a3bcacf67629b0ee4b7afbcebff
         print('读文件成功')
         p.close()
     else:
@@ -35,18 +46,27 @@ def customRead():
 
 def customWrite():
     p = open(baseUrl,'wb')
+<<<<<<< HEAD
     global itemList
+=======
+>>>>>>> 0d3f60d0189a1a3bcacf67629b0ee4b7afbcebff
     pickle.dump(itemList, p)
     print('写入文件成功')
     p.close()
 
 def searchAll():
+<<<<<<< HEAD
     #print('searchAll:itemList:{0}'.format(itemList))
     if len(itemList) <=0:
         print('没有查询到')
         return
     for user in itemList:
         #print('searchAll:{0}'.format(user))
+=======
+    print('searchAll:itemList:{0}'.format(itemList))
+    for user in itemList:
+        print('searchAll:{0}'.format(user))
+>>>>>>> 0d3f60d0189a1a3bcacf67629b0ee4b7afbcebff
         print('phone:{0} name:{1} email:{2}'.format(user['phone'], user['name'], user['email']))
     print('查询所用成功')
 
